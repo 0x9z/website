@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cybernetwork.technology | ANAS</title>
+  
+  <!-- Google Fonts & Ionicons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* Variables & Base Styles */
+    :root {
+      --font-base: 'Work Sans', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-code: "Lucida Console", Monaco, monospace;
+      --brand-color: #533feb;
+      --body-background: #ffffff;
+      --text-color: #212529;
+      --text-muted: #6c757d;
+      --border-color: #e9ecef;
+      --card-background: #f8f9fa;
+    }
+
+    [dark] {
+      --body-background: #121212;
+      --text-color: #f8f9fa;
+      --text-muted: #a0aec0;
+      --border-color: #2d3748;
+      --card-background: #1a202c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--body-background);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Handle dynamic font switching when Arabic is active */
+    html[lang="ar"] body {
+      font-family: 'Cairo', var(--font-base);
+    }
+
+    a {
+      color: var(--brand-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid Layout */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    .col-md-6 {
+      padding: 0 15px;
+    }
+
+    @media (min-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Header & Navigation */
+    header {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Language Switcher Styling */
+    .lang-select {
+      background: var(--card-background);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .social-links ion-icon {
+      font-size: 1.8rem;
+      color: var(--text-color);
+      transition: color 0.2s;
+    }
+
+    .social-links ion-icon:hover {
+      color: var(--brand-color);
+    }
+
+    /* Sections & Cards */
+    .section-title {
+      margin: 40px 0 20px;
+      font-size: 1.75rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .card {
+      background-color: var(--card-background);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">ANAS | cybernetwork.technology</a>
+      <ul class="nav-links">
+        <li><a href="#projects" id="nav-projects">Projects</a></li>
+        <li><a href="#blog" id="nav-blog">Blog</a></li>
+        <li>
+          <!-- Language Dropdown Menu -->
+          <select id="lang-switcher" class="lang-select" aria-label="Switch Language">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </li>
+        <li>
+          <button id="theme-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 id="hero-title">Welcome, I am a Software Engineer</h1>
+      <p id="hero-desc">Here you can write a short, compelling biography about yourself, your technical skills, and your passions.</p>
+      <ul class="social-links">
+        <li><a href="https://github.com" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a href="https://linkedin.com" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="mailto:email@example.com"><ion-icon name="mail-outline"></ion-icon></a></li>
+      </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title" id="section-projects-title">Featured Projects</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <h3><a href="#" id="proj1-title">First Project Title</a></h3>
+            <p id="proj1-desc">A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <h3><a href="#" id="proj2-title">Second Project Title</a></h3>
+            <p id="proj2-desc">A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2 class="section-title" id="section-blog-title">Latest Articles</h2>
+      <div class="card">
+        <h3><a href="#" id="post1-title">How to Get Started in Web Development?</a></h3>
+        <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 12, 2026</small></p>
+        <p id="post1-desc">An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p id="footer-text">&copy; 2026 ANAS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dark Mode & Multilingual Scripts -->
+  <script>
+    /* ==========================================================================
+       1. Theme Management (Dark/Light)
+       ========================================================================== */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    const currentTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('dark', '');
+      themeIcon.setAttribute('name', 'sunny-outline');
+    } else {
+      themeIcon.setAttribute('name', 'moon-outline');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.hasAttribute('dark')) {
+        document.documentElement.removeAttribute('dark');
+        themeIcon.setAttribute('name', 'moon-outline');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('dark', '');
+        themeIcon.setAttribute('name', 'sunny-outline');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    /* ==========================================================================
+       2. Multilingual Translations Dictionary
+       ========================================================================== */
+    const translations = {
+      en: {
+        dir: "ltr",
+        navProjects: "Projects",
+        navBlog: "Blog",
+        heroTitle: "Welcome, I am a Software Engineer",
+        heroDesc: "Here you can write a short, compelling biography about yourself, your technical skills, and your passions.",
+        sectionProjects: "Featured Projects",
+        proj1Title: "First Project Title",
+        proj1Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        proj2Title: "Second Project Title",
+        proj2Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        sectionBlog: "Latest Articles",
+        post1Title: "How to Get Started in Web Development?",
+        post1Date: "Published on: July 12, 2026",
+        post1Desc: "An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...",
+        footerText: "© 2026 ANAS. All rights reserved."
+      },
+      ar: {
+        dir: "rtl",
+        navProjects: "المشاريع",
+        navBlog: "المدونة",
+        heroTitle: "أهلاً بك، أنا مهندس برمجيات",
+        heroDesc: "هنا يمكنك كتابة نبذة مختصرة وجذابة عن نفسك، مهاراتك التقنية، وشغفك المهني.",
+        sectionProjects: "المشاريع المميزة",
+        proj1Title: "اسم المشروع الأول",
+        proj1Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        proj2Title: "اسم المشروع الثاني",
+        proj2Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        sectionBlog: "آخر المقالات",
+        post1Title: "كيف تبدأ في عالم تطوير الويب؟",
+        post1Date: "تم النشر في: 12 يوليو 2026",
+        post1Desc: "مقال يستعرض خريطة الطريق الأساسية والمنصات التعليمية المناسبة لدخول هندسة البرمجيات والمواقع...",
+        footerText: "© 2026 أنس. كل الحقوق محفوظة."
+      },
+      fr: {
+        dir: "ltr",
+        navProjects: "Projets",
+        navBlog: "Blog",
+        heroTitle: "Bienvenue, je suis Ingénieur Logiciel",
+        heroDesc: "Ici, vous pouvez écrire une biographie courte et convaincante sur vous-même, vos compétences techniques et vos passions.",
+        sectionProjects: "Projets Récents",
+        proj1Title: "Titre du Premier Projet",
+        proj1Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        proj2Title: "Titre du Deuxième Projet",
+        proj2Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        sectionBlog: "Derniers Articles",
+        post1Title: "Comment Débuter dans le Développement Web ?",
+        post1Date: "Publié le: 12 Juillet 2026",
+        post1Desc: "Un article instructif couvrant les frameworks essentiels et les feuilles de route adaptées aux nouveaux arrivants...",
+        footerText: "© 2026 ANAS. Tous droits réservés."
+      }
+    };
+
+    /* ==========================================================================
+       3. Language Application Logic
+       ========================================================================== */
+    const langSwitcher = document.getElementById('lang-switcher');
+
+    function applyLanguage(lang) {
+      const data = translations[lang];
+      
+      // Update HTML language state attributes
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', data.dir);
+
+      // Render updated text translations
+      document.getElementById('nav-projects').textContent = data.navProjects;
+      document.getElementById('nav-blog').textContent = data.navBlog;
+      document.getElementById('hero-title').textContent = data.heroTitle;
+      document.getElementById('hero-desc').textContent = data.heroDesc;
+      document.getElementById('section-projects-title').textContent = data.sectionProjects;
+      document.getElementById('proj1-title').textContent = data.proj1Title;
+      document.getElementById('proj1-desc').textContent = data.proj1Desc;
+      document.getElementById('proj2-title').textContent = data.proj2Title;
+      document.getElementById('proj2-desc').textContent = data.proj2Desc;
+      document.getElementById('section-blog-title').textContent = data.sectionBlog;
+      document.getElementById('post1-title').textContent = data.post1Title;
+      document.getElementById('post1-date').textContent = data.post1Date;
+      document.getElementById('post1-desc').textContent = data.post1Desc;
+      document.getElementById('footer-text').textContent = data.footerText;
+
+      // Persist chosen language selection
+      langSwitcher.value = lang;
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    // Handle user changes from the select menu
+    langSwitcher.addEventListener('change', (e) => {
+      applyLanguage(e.target.value);
+    });
+
+    // Initialize layout using stored value (defaults to 'en' if empty)
+    const initialLang = localStorage.getItem('preferred-lang') || 'en';
+    applyLanguage(initialLang);
+  </script>
+</body>
+</html>
