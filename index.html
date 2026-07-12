@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>موقعي الشخصي</title>
+  <title>cybernetwork.technology | ANAS</title>
   
-  <!-- خطوط جوجل وأيقونات Ionicons -->
+  <!-- Google Fonts & Ionicons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,9 +14,9 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <style>
-    /* المتغيرات والتنسيقات الأساسية */
+    /* Variables & Base Styles */
     :root {
-      --font-base: 'Cairo', 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-base: 'Work Sans', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-code: "Lucida Console", Monaco, monospace;
       --brand-color: #533feb;
       --body-background: #ffffff;
@@ -48,6 +48,11 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
+    /* Handle dynamic font switching when Arabic is active */
+    html[lang="ar"] body {
+      font-family: 'Cairo', var(--font-base);
+    }
+
     a {
       color: var(--brand-color);
       text-decoration: none;
@@ -57,7 +62,7 @@
       text-decoration: underline;
     }
 
-    /* النظام الشبكي المبسط */
+    /* Grid Layout */
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -87,7 +92,7 @@
       }
     }
 
-    /* الهيدر والتنقل */
+    /* Header & Navigation */
     header {
       padding: 30px 0;
       border-bottom: 1px solid var(--border-color);
@@ -101,7 +106,8 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
     }
 
     .nav-links {
@@ -121,7 +127,20 @@
       align-items: center;
     }
 
-    /* قسم التعريف البطل (Hero) */
+    /* Language Switcher Styling */
+    .lang-select {
+      background: var(--card-background);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Hero Section */
     .hero {
       padding: 60px 0;
       text-align: center;
@@ -139,7 +158,7 @@
       margin: 0 auto 25px;
     }
 
-    /* الأيقونات الاجتماعية */
+    /* Social Links */
     .social-links {
       display: flex;
       justify-content: center;
@@ -157,7 +176,7 @@
       color: var(--brand-color);
     }
 
-    /* قسم المشاريع والمدونة */
+    /* Sections & Cards */
     .section-title {
       margin: 40px 0 20px;
       font-size: 1.75rem;
@@ -187,7 +206,7 @@
       font-size: 0.95rem;
     }
 
-    /* الفوتر */
+    /* Footer */
     footer {
       padding: 40px 0;
       text-align: center;
@@ -199,15 +218,23 @@
 </head>
 <body>
 
-  <!-- الهيدر -->
+  <!-- Header -->
   <header>
     <div class="container nav-wrapper">
-      <a href="#" class="logo">اسمي الشخصي</a>
+      <a href="#" class="logo">ANAS | cybernetwork.technology</a>
       <ul class="nav-links">
-        <li><a href="#projects">المشاريع</a></li>
-        <li><a href="#blog">المدونة</a></li>
+        <li><a href="#projects" id="nav-projects">Projects</a></li>
+        <li><a href="#blog" id="nav-blog">Blog</a></li>
         <li>
-          <button id="theme-toggle" class="dark-mode-toggle" aria-label="تبديل الوضع الداكن">
+          <!-- Language Dropdown Menu -->
+          <select id="lang-switcher" class="lang-select" aria-label="Switch Language">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </li>
+        <li>
+          <button id="theme-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
             <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
           </button>
         </li>
@@ -216,10 +243,10 @@
   </header>
 
   <main class="container">
-    <!-- قسم التعريف الرئيسي -->
+    <!-- Hero Section -->
     <section class="hero">
-      <h1>أهلاً بك، أنا مطور برمجيات</h1>
-      <p>هنا يمكنك كتابة نبذة مختصرة عن نفسك، مهاراتك، وشغفك في العمل وتطوير المواقع.</p>
+      <h1 id="hero-title">Welcome, I am a Software Engineer</h1>
+      <p id="hero-desc">Here you can write a short, compelling biography about yourself, your technical skills, and your passions.</p>
       <ul class="social-links">
         <li><a href="https://github.com" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
         <li><a href="https://linkedin.com" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
@@ -227,53 +254,54 @@
       </ul>
     </section>
 
-    <!-- قسم المشاريع -->
+    <!-- Projects Section -->
     <section id="projects">
-      <h2 class="section-title">المشاريع المفضلة</h2>
+      <h2 class="section-title" id="section-projects-title">Featured Projects</h2>
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="card">
-            <h3><a href="#">اسم المشروع الأول</a></h3>
-            <p>وصف مختصر وجذاب للمشروع والتقنيات المستخدمة في بنائه مثل HTML, CSS, JavaScript.</p>
+            <h3><a href="#" id="proj1-title">First Project Title</a></h3>
+            <p id="proj1-desc">A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.</p>
           </div>
         </div>
         <div class="col-12 col-md-6">
           <div class="card">
-            <h3><a href="#">اسم المشروع الثاني</a></h3>
-            <p>وصف مختصر وجذاب للمشروع والتقنيات المستخدمة في بنائه مثل HTML, CSS, JavaScript.</p>
+            <h3><a href="#" id="proj2-title">Second Project Title</a></h3>
+            <p id="proj2-desc">A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- قسم المدونة -->
+    <!-- Blog Section -->
     <section id="blog">
-      <h2 class="section-title">آخر المقالات</h2>
+      <h2 class="section-title" id="section-blog-title">Latest Articles</h2>
       <div class="card">
-        <h3><a href="#">كيف تبدأ في عالم تطوير الويب؟</a></h3>
-        <p><small style="display:block; margin-bottom: 5px;">تم النشر في: 12 يوليو 2026</small></p>
-        <p>مقال يستعرض أهم النصائح والخطوات الأساسية لكل مبتدئ يريد دخول مجال البرمجة وتصميم المواقع...</p>
+        <h3><a href="#" id="post1-title">How to Get Started in Web Development?</a></h3>
+        <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 12, 2026</small></p>
+        <p id="post1-desc">An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...</p>
       </div>
     </section>
   </main>
 
-  <!-- الفوتر -->
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 اسمي الشخصي. كل الحقوق محفوظة.</p>
+      <p id="footer-text">&copy; 2026 ANAS. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- جافا سكريبت للوضع الداكن المطور -->
+  <!-- Dark Mode & Multilingual Scripts -->
   <script>
+    /* ==========================================================================
+       1. Theme Management (Dark/Light)
+       ========================================================================== */
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
 
-    // فحص التفضيل المحفوظ أو تفضيل النظام
     const currentTheme = localStorage.getItem('theme') || 
                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-    // تطبيق المظهر الأولي
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('dark', '');
       themeIcon.setAttribute('name', 'sunny-outline');
@@ -281,7 +309,6 @@
       themeIcon.setAttribute('name', 'moon-outline');
     }
 
-    // استماع لحدث الضغط على زر التبديل
     themeToggleBtn.addEventListener('click', () => {
       if (document.documentElement.hasAttribute('dark')) {
         document.documentElement.removeAttribute('dark');
@@ -293,6 +320,105 @@
         localStorage.setItem('theme', 'dark');
       }
     });
+
+    /* ==========================================================================
+       2. Multilingual Translations Dictionary
+       ========================================================================== */
+    const translations = {
+      en: {
+        dir: "ltr",
+        navProjects: "Projects",
+        navBlog: "Blog",
+        heroTitle: "Welcome, I am a Software Engineer",
+        heroDesc: "Here you can write a short, compelling biography about yourself, your technical skills, and your passions.",
+        sectionProjects: "Featured Projects",
+        proj1Title: "First Project Title",
+        proj1Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        proj2Title: "Second Project Title",
+        proj2Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        sectionBlog: "Latest Articles",
+        post1Title: "How to Get Started in Web Development?",
+        post1Date: "Published on: July 12, 2026",
+        post1Desc: "An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...",
+        footerText: "© 2026 ANAS. All rights reserved."
+      },
+      ar: {
+        dir: "rtl",
+        navProjects: "المشاريع",
+        navBlog: "المدونة",
+        heroTitle: "أهلاً بك، أنا مهندس برمجيات",
+        heroDesc: "هنا يمكنك كتابة نبذة مختصرة وجذابة عن نفسك، مهاراتك التقنية، وشغفك المهني.",
+        sectionProjects: "المشاريع المميزة",
+        proj1Title: "اسم المشروع الأول",
+        proj1Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        proj2Title: "اسم المشروع الثاني",
+        proj2Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        sectionBlog: "آخر المقالات",
+        post1Title: "كيف تبدأ في عالم تطوير الويب؟",
+        post1Date: "تم النشر في: 12 يوليو 2026",
+        post1Desc: "مقال يستعرض خريطة الطريق الأساسية والمنصات التعليمية المناسبة لدخول هندسة البرمجيات والمواقع...",
+        footerText: "© 2026 أنس. كل الحقوق محفوظة."
+      },
+      fr: {
+        dir: "ltr",
+        navProjects: "Projets",
+        navBlog: "Blog",
+        heroTitle: "Bienvenue, je suis Ingénieur Logiciel",
+        heroDesc: "Ici, vous pouvez écrire une biographie courte et convaincante sur vous-même, vos compétences techniques et vos passions.",
+        sectionProjects: "Projets Récents",
+        proj1Title: "Titre du Premier Projet",
+        proj1Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        proj2Title: "Titre du Deuxième Projet",
+        proj2Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        sectionBlog: "Derniers Articles",
+        post1Title: "Comment Débuter dans le Développement Web ?",
+        post1Date: "Publié le: 12 Juillet 2026",
+        post1Desc: "Un article instructif couvrant les frameworks essentiels et les feuilles de route adaptées aux nouveaux arrivants...",
+        footerText: "© 2026 ANAS. Tous droits réservés."
+      }
+    };
+
+    /* ==========================================================================
+       3. Language Application Logic
+       ========================================================================== */
+    const langSwitcher = document.getElementById('lang-switcher');
+
+    function applyLanguage(lang) {
+      const data = translations[lang];
+      
+      // Update HTML language state attributes
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', data.dir);
+
+      // Render updated text translations
+      document.getElementById('nav-projects').textContent = data.navProjects;
+      document.getElementById('nav-blog').textContent = data.navBlog;
+      document.getElementById('hero-title').textContent = data.heroTitle;
+      document.getElementById('hero-desc').textContent = data.heroDesc;
+      document.getElementById('section-projects-title').textContent = data.sectionProjects;
+      document.getElementById('proj1-title').textContent = data.proj1Title;
+      document.getElementById('proj1-desc').textContent = data.proj1Desc;
+      document.getElementById('proj2-title').textContent = data.proj2Title;
+      document.getElementById('proj2-desc').textContent = data.proj2Desc;
+      document.getElementById('section-blog-title').textContent = data.sectionBlog;
+      document.getElementById('post1-title').textContent = data.post1Title;
+      document.getElementById('post1-date').textContent = data.post1Date;
+      document.getElementById('post1-desc').textContent = data.post1Desc;
+      document.getElementById('footer-text').textContent = data.footerText;
+
+      // Persist chosen language selection
+      langSwitcher.value = lang;
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    // Handle user changes from the select menu
+    langSwitcher.addEventListener('change', (e) => {
+      applyLanguage(e.target.value);
+    });
+
+    // Initialize layout using stored value (defaults to 'en' if empty)
+    const initialLang = localStorage.getItem('preferred-lang') || 'en';
+    applyLanguage(initialLang);
   </script>
 </body>
 </html>
