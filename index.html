@@ -27,31 +27,28 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <style>
-    /* المتغيرات والتنسيقات الأساسية */
+    /* المتغيرات والتنسيقات الأساسية للوضع الفاتح والداكن المعتمد فقط على الأبيض والأسود */
     :root {
-  --font-base: 'Work Sans', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-code: "Lucida Console", Monaco, monospace;
-  
-  /* اللون الجديد بدلاً من #533feb */
-  --brand-color: #e3ed70; 
-  
-  --body-background: #ffffff;
-  --text-color: #212529;
-  --text-muted: #6c757d;
-  --border-color: #e9ecef;
-  --card-background: #f8f9fa;
-
-  /* نصيحة إضافية: إذا كنت تستخدم هذا اللون كخلفية لأزرار، 
-     يفضل تخلي لون النص فوقه داكن (مثلاً #1e293b) عشان يكون مريح للعين */
-}
+      --font-base: 'Work Sans', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-code: "Lucida Console", Monaco, monospace;
+      
+      /* وضع فاتح ناصع بدون ألوان ثانوية */
+      --brand-color: #000000; 
+      --body-background: #ffffff;
+      --text-color: #111111;
+      --text-muted: #666666;
+      --border-color: #e5e5e5;
+      --card-background: #fafafa;
     }
 
     [dark] {
-      --body-background: #121212;
-      --text-color: #f8f9fa;
-      --text-muted: #a0aec0;
-      --border-color: #2d3748;
-      --card-background: #1a202c;
+      /* وضع داكن نقي مريح للعين */
+      --brand-color: #ffffff;
+      --body-background: #0a0a0a;
+      --text-color: #ededed;
+      --text-muted: #a0a0a0;
+      --border-color: #262626;
+      --card-background: #141414;
     }
 
     * {
@@ -70,7 +67,7 @@
       background-color: var(--body-background);
       color: var(--text-color);
       line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.2s, color 0.2s;
     }
 
     /* تغيير الخط تلقائياً عند اختيار اللغة العربية */
@@ -79,8 +76,9 @@
     }
 
     a {
-      color: var(--brand-color);
+      color: var(--text-color);
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
@@ -137,6 +135,7 @@
       font-weight: 700;
       font-size: 1.15rem;
       letter-spacing: -0.5px;
+      color: var(--brand-color);
     }
 
     .nav-links {
@@ -203,11 +202,11 @@
     .social-links ion-icon {
       font-size: 1.8rem;
       color: var(--text-color);
-      transition: color 0.2s;
+      transition: opacity 0.2s;
     }
 
-    .social-links ion-icon:hover {
-      color: var(--brand-color);
+    .social-links a:hover ion-icon {
+      opacity: 0.7;
     }
 
     /* الأقسام والكروت */
@@ -224,11 +223,12 @@
       border-radius: 8px;
       padding: 25px;
       margin-bottom: 30px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      border-color: var(--text-muted);
     }
 
     .card h3 {
