@@ -40,6 +40,11 @@
       padding: 0;
     }
 
+    /* جعل التنقل ناعماً وسلساً عند الضغط على الروابط */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-base);
       background-color: var(--body-background);
@@ -92,10 +97,14 @@
       }
     }
 
-    /* الهيدر والتنقل */
+    /* الهيدر والتنقل المتنقل والثابت */
     header {
-      padding: 30px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      background-color: var(--body-background);
+      z-index: 1000;
     }
 
     .nav-wrapper {
@@ -140,9 +149,14 @@
       outline: none;
     }
 
+    /* إضافة هوامش عليا للأقسام لكي لا يغطيها الهيدر الثابت عند الضغط على الروابط */
+    section {
+      scroll-margin-top: 100px;
+    }
+
     /* قسم الـ Hero */
     .hero {
-      padding: 60px 0;
+      padding: 100px 0;
       text-align: center;
     }
 
@@ -178,7 +192,7 @@
 
     /* الأقسام والكروت */
     .section-title {
-      margin: 40px 0 20px;
+      margin: 60px 0 30px;
       font-size: 1.75rem;
       border-bottom: 2px solid var(--border-color);
       padding-bottom: 10px;
@@ -188,7 +202,7 @@
       background-color: var(--card-background);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 20px;
+      padding: 25px;
       margin-bottom: 30px;
       transition: transform 0.2s;
     }
@@ -208,17 +222,17 @@
 
     /* الفوتر */
     footer {
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
       color: var(--text-muted);
       border-top: 1px solid var(--border-color);
-      margin-top: 60px;
+      margin-top: 100px;
     }
   </style>
 </head>
 <body>
 
-  <!-- الهيدر -->
+  <!-- الهيدر الاستراتيجي الثابت عند النزول لأسفل -->
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="logo">ANAS | cybernetwork.technology</a>
@@ -406,7 +420,6 @@
       applyLanguage(e.target.value);
     });
 
-    // الإنجليزية هي اللغة الافتراضية عند أول دخول للموقع
     const initialLang = localStorage.getItem('preferred-lang') || 'en';
     applyLanguage(initialLang);
   </script>
