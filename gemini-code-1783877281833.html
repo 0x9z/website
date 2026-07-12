@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>موقعي الشخصي</title>
+  
+  <!-- خطوط جوجل وأيقونات Ionicons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* المتغيرات والتنسيقات الأساسية */
+    :root {
+      --font-base: 'Cairo', 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-code: "Lucida Console", Monaco, monospace;
+      --brand-color: #533feb;
+      --body-background: #ffffff;
+      --text-color: #212529;
+      --text-muted: #6c757d;
+      --border-color: #e9ecef;
+      --card-background: #f8f9fa;
+    }
+
+    [dark] {
+      --body-background: #121212;
+      --text-color: #f8f9fa;
+      --text-muted: #a0aec0;
+      --border-color: #2d3748;
+      --card-background: #1a202c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--body-background);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a {
+      color: var(--brand-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* النظام الشبكي المبسط */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    .col-md-6 {
+      padding: 0 15px;
+    }
+
+    @media (min-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* الهيدر والتنقل */
+    header {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    /* قسم التعريف البطل (Hero) */
+    .hero {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* الأيقونات الاجتماعية */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .social-links ion-icon {
+      font-size: 1.8rem;
+      color: var(--text-color);
+      transition: color 0.2s;
+    }
+
+    .social-links ion-icon:hover {
+      color: var(--brand-color);
+    }
+
+    /* قسم المشاريع والمدونة */
+    .section-title {
+      margin: 40px 0 20px;
+      font-size: 1.75rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .card {
+      background-color: var(--card-background);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* الفوتر */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">اسمي الشخصي</a>
+      <ul class="nav-links">
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#blog">المدونة</a></li>
+        <li>
+          <button id="theme-toggle" class="dark-mode-toggle" aria-label="تبديل الوضع الداكن">
+            <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- قسم التعريف الرئيسي -->
+    <section class="hero">
+      <h1>أهلاً بك، أنا مطور برمجيات</h1>
+      <p>هنا يمكنك كتابة نبذة مختصرة عن نفسك، مهاراتك، وشغفك في العمل وتطوير المواقع.</p>
+      <ul class="social-links">
+        <li><a href="https://github.com" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a href="https://linkedin.com" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="mailto:email@example.com"><ion-icon name="mail-outline"></ion-icon></a></li>
+      </ul>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects">
+      <h2 class="section-title">المشاريع المفضلة</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <h3><a href="#">اسم المشروع الأول</a></h3>
+            <p>وصف مختصر وجذاب للمشروع والتقنيات المستخدمة في بنائه مثل HTML, CSS, JavaScript.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <h3><a href="#">اسم المشروع الثاني</a></h3>
+            <p>وصف مختصر وجذاب للمشروع والتقنيات المستخدمة في بنائه مثل HTML, CSS, JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المدونة -->
+    <section id="blog">
+      <h2 class="section-title">آخر المقالات</h2>
+      <div class="card">
+        <h3><a href="#">كيف تبدأ في عالم تطوير الويب؟</a></h3>
+        <p><small style="display:block; margin-bottom: 5px;">تم النشر في: 12 يوليو 2026</small></p>
+        <p>مقال يستعرض أهم النصائح والخطوات الأساسية لكل مبتدئ يريد دخول مجال البرمجة وتصميم المواقع...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- الفوتر -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 اسمي الشخصي. كل الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- جافا سكريبت للوضع الداكن المطور -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // فحص التفضيل المحفوظ أو تفضيل النظام
+    const currentTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    // تطبيق المظهر الأولي
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('dark', '');
+      themeIcon.setAttribute('name', 'sunny-outline');
+    } else {
+      themeIcon.setAttribute('name', 'moon-outline');
+    }
+
+    // استماع لحدث الضغط على زر التبديل
+    themeToggleBtn.addEventListener('click', () => {
+      if (document.documentElement.hasAttribute('dark')) {
+        document.documentElement.removeAttribute('dark');
+        themeIcon.setAttribute('name', 'moon-outline');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('dark', '');
+        themeIcon.setAttribute('name', 'sunny-outline');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
