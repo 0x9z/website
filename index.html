@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>cybernetwork.technology | ANAS</title>
   
-  <!-- خطوط جوجل وأيقونات Ionicons -->
+  <!-- google Ionicons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,12 +27,12 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <style>
-    /* المتغيرات والتنسيقات الأساسية للوضع الفاتح والداكن المعتمد فقط على الأبيض والأسود */
+    /* dark mode and light mode */
     :root {
       --font-base: 'Work Sans', 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-code: "Lucida Console", Monaco, monospace;
       
-      /* وضع فاتح ناصع بدون ألوان ثانوية */
+      /* lightweight color */
       --brand-color: #000000; 
       --body-background: #ffffff;
       --text-color: #111111;
@@ -42,7 +42,7 @@
     }
 
     [dark] {
-      /* وضع داكن نقي مريح للعين */
+      /* dark color */
       --brand-color: #ffffff;
       --body-background: #0a0a0a;
       --text-color: #ededed;
@@ -57,7 +57,7 @@
       padding: 0;
     }
 
-    /* جعل التنقل ناعماً وسلساً عند الضغط على الروابط */
+    /* easy go to links */
     html {
       scroll-behavior: smooth;
     }
@@ -70,7 +70,7 @@
       transition: background-color 0.2s, color 0.2s;
     }
 
-    /* تغيير الخط تلقائياً عند اختيار اللغة العربية */
+    /* change to arabic */
     html[lang="ar"] body {
       font-family: 'Cairo', var(--font-base);
     }
@@ -85,7 +85,7 @@
       text-decoration: underline;
     }
 
-    /* النظام الشبكي */
+    /* internetwork system */
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -115,7 +115,7 @@
       }
     }
 
-    /* الهيدر والتنقل المتنقل والثابت */
+    /* the header and border */
     header {
       padding: 20px 0;
       border-bottom: 1px solid var(--border-color);
@@ -155,7 +155,7 @@
       align-items: center;
     }
 
-    /* تصميم قائمة اللغات */
+    /* laungue table */
     .lang-select {
       background: var(--card-background);
       color: var(--text-color);
@@ -168,12 +168,12 @@
       outline: none;
     }
 
-    /* إضافة هوامش عليا للأقسام لكي لا يغطيها الهيدر الثابت عند الضغط على الروابط */
+    /* fixed anti-scroll */
     section {
       scroll-margin-top: 100px;
     }
 
-    /* قسم الـ Hero */
+    /* hero section */
     .hero {
       padding: 100px 0;
       text-align: center;
@@ -191,7 +191,7 @@
       margin: 0 auto 25px;
     }
 
-    /* الأيقونات الاجتماعية */
+    /* social icones */
     .social-links {
       display: flex;
       justify-content: center;
@@ -209,7 +209,7 @@
       opacity: 0.7;
     }
 
-    /* الأقسام والكروت */
+    /* sections and cards */
     .section-title {
       margin: 60px 0 30px;
       font-size: 1.75rem;
@@ -240,7 +240,7 @@
       font-size: 0.95rem;
     }
 
-    /* الفوتر */
+    /* footer */
     footer {
       padding: 60px 0;
       text-align: center;
@@ -252,7 +252,7 @@
 </head>
 <body>
 
-  <!-- الهيدر الاستراتيجي الثابت عند النزول لأسفل -->
+  <!-- fixed header -->
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="logo">Cyber Network Technology</a>
@@ -262,7 +262,7 @@
         <li><a href="#about-me" id="nav-projects">About Me</a></li>
         <li><a href="#blog" id="nav-blog">Blog</a></li>
         <li>
-          <!-- قائمة اختيار اللغة -->
+          <!-- laungue choices list -->
           <select id="lang-switcher" class="lang-select" aria-label="Switch Language">
             <option value="en">English</option>
             <option value="ar">العربية</option>
@@ -279,7 +279,7 @@
   </header>
 
   <main class="container">
-    <!-- قسم التعريف الرئيسي -->
+    <!-- intro section  -->
     <section class="hero">
       <h1 id="hero-title">Hi, I'm Anas — I break down networks to see how they work</h1>
       <p id="hero-desc">A Software Engineer specialized in networks and cyber security. Fueled by Linux, hands-on homelabs, and a deep curiosity to look under the hood of tools and software. Currently mastering Docker..</p>
@@ -290,7 +290,7 @@
       </ul>
     </section>
 
-    <!-- قسم المشاريع -->
+    <!-- projects section -->
     <section id="projects">
       <h2 class="section-title" id="section-projects-title">Featured Projects</h2>
       <div class="row">
@@ -309,7 +309,7 @@
       </div>
     </section>
 
-    <!-- قسم المدونة -->
+    <!-- blog section -->
     <section id="blog">
       <h2 class="section-title" id="section-blog-title">Latest Articles</h2>
       <div class="card">
@@ -320,16 +320,16 @@
     </section>
   </main>
 
-  <!-- الفوتر -->
+  <!-- footer2 -->
   <footer>
     <div class="container">
       <p id="footer-text">&copy; 2026 ANAS. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- جافا سكريبت للوضع الداكن واللغات المتعددة -->
+  <!-- javascript code for dark mode -->
   <script>
-    /* 1. إدارة الوضع الداكن والفاتح */
+    /* 1. dark mode , light mode */
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
 
@@ -355,7 +355,7 @@
       }
     });
 
-    /* 2. قاموس الترجمة للغات الثلاث */
+    /* 2. dicionnary for 3 laungue */
     const translations = {
       en: {
         dir: "ltr",
@@ -410,7 +410,7 @@
       }
     };
 
-    /* 3. منطق تطبيق اللغة وتغيير الاتجاهات */
+    /* 3. the laungue logic */
     const langSwitcher = document.getElementById('lang-switcher');
 
     function applyLanguage(lang) {
