@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Article Reader | Cyber Network</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.8; background: #0a0a0a; color: #ededed; }
+    pre { background: #1e1e1e; color: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    code { font-family: monospace; background: #262626; padding: 2px 6px; border-radius: 4px; }
+    blockquote { border-left: 4px solid #fff; padding-left: 15px; color: #a0a0a0; margin: 20px 0; }
+    a { color: #58a6ff; }
+    a.back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">← Back to Home</a>
+  <div id="content">Loading article...</div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileName = urlParams.get('file');
+
+    if (fileName) {
+      fetch(`https://raw.githubusercontent.com/0x9z/website/main/articles/${fileName}`)
+        .then(response => {
+          if (!response.ok) throw new Error("Article not found");
+          return response.text();
+        })
+        .then(markdown => {
+          document.getElementById('content').innerHTML = marked.parse(markdown);
+        })
+        .catch(err => {
+          document.getElementById('content').innerHTML = `<p style="color:red">Error loading article. Please make sure the file exists in /articles/ directory.</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
