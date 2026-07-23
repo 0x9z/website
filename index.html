@@ -258,8 +258,8 @@
       <a href="https://0x9z.github.io/website/" class="logo">CyberNetwork.Technology</a>
       <ul class="nav-links">
         <li><a href="#projects" id="nav-projects">Projects</a></li>
-        <li><a href="#portfolio" id="nav-projects">Portfolio</a></li>
-        <li><a href="#about-me" id="nav-projects">About Me</a></li>
+        <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="#about-me" id="nav-about">About Me</a></li>
         <li><a href="#blog" id="nav-blog">Blog</a></li>
         <li>
           <!-- laungue choices list -->
@@ -312,16 +312,14 @@
     <!-- blog section -->
     <section id="blog">
       <h2 class="section-title" id="section-blog-title">Latest Articles</h2>
+      
+      <!-- هنا كارت مقالك الأول المربوط بملف الـ Markdown -->
       <div class="card">
-        <h3><a href="#" id="post1-title">How to Get Started in Web Development?</a></h3>
-        <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 12, 2026</small></p>
-        <p id="post1-desc">An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...</p>
+        <h3><a href="article.html?file=day11-routing-fundamentals.md" id="post1-title">Understanding Packet Forwarding: CCNA Day 11</a></h3>
+        <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 23, 2026</small></p>
+        <p id="post1-desc">A deep dive into Routing Tables, Connected vs Local routes, and the Longest Prefix Match rule.</p>
       </div>
-      <div class="card">
-        <h3><a href="#" id="post1-title">How to Get Started in PacketTracer?</a></h3>
-        <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 12, 2026</small></p>
-        <p id="post1-desc">An insightful article covering essential Cisco PacketTracer Cmmands to sart...</p>
-      </div>
+
     </section>
   </main>
 
@@ -332,7 +330,7 @@
     </div>
   </footer>
 
-  <!-- javascript code for dark mode -->
+  <!-- javascript code for dark mode & languages -->
   <script>
     /* 1. dark mode , light mode */
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -360,23 +358,23 @@
       }
     });
 
-    /* 2. dicionnary for 3 laungue */
+    /* 2. dicionnary for 3 laungues */
     const translations = {
       en: {
         dir: "ltr",
         navProjects: "Projects",
         navBlog: "Blog",
         heroTitle: "Hi, I'm Anas — I break down networks to see how they work",
-        heroDesc: "A Software Engineer specialized in networks and cyber security. Fueled by Linux, hands-on homelabs, and a deep curiosity to look under the hood of tools and software. Currently mastering Docker.",
+        heroDesc: "A Software Engineer specialized in networks and cyber security. Fueled by Linux, hands-on homelabs, and a deep curiosity to look under the hood of tools and software.",
         sectionProjects: "Featured Projects",
         proj1Title: "First Project",
-        proj1Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        proj1Desc: "A brief description explaining your project architecture.",
         proj2Title: "Second Project",
-        proj2Desc: "A brief description explaining your project architecture and the key tech stacks utilized like HTML, CSS, JavaScript.",
+        proj2Desc: "A brief description explaining your project architecture.",
         sectionBlog: "Latest Articles",
-        post1Title: "How to Get Started in Web Development?",
-        post1Date: "Published on: July 12, 2026",
-        post1Desc: "An insightful article covering essential frameworks and foundational roadmaps tailored for engineering newcomers...",
+        post1Title: "Understanding Packet Forwarding: CCNA Day 11",
+        post1Date: "Published on: July 23, 2026",
+        post1Desc: "A deep dive into Routing Tables, Connected vs Local routes, and the Longest Prefix Match rule.",
         footerText: "© 2026 CYBER NETWORK TECHNOLOGY. All rights reserved."
       },
       ar: {
@@ -384,16 +382,16 @@
         navProjects: "المشاريع",
         navBlog: "المدونة",
         heroTitle: "أهلاً، أنا أنس — أفكك الشبكات لأفهم كيف تعمل",
-        heroDesc: "Linux، تجارب المختبرات (Homelabs)، وشغف عميق بمعرفة ما يحدث خلف كواليس البرامج والأدوات. حالياً أتعمق في Docker.",
+        heroDesc: "متخصص في الشبكات والأمن السيبراني. يدفعني Linux، تجارب المختبرات (Homelabs)، وشغف عميق بما يحدث خلف الكواليس.",
         sectionProjects: "المشاريع المميزة",
         proj1Title: "المشروع الأول",
-        proj1Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        proj1Desc: "وصف مختصر يشرح بنية المشروع والأدوات المستعملة.",
         proj2Title: "المشروع الثاني",
-        proj2Desc: "وصف مختصر يشرح بنية المشروع وأهم التقنيات واللغات المستخدمة في بنائه مثل HTML, CSS, JavaScript.",
+        proj2Desc: "وصف مختصر يشرح بنية المشروع والأدوات المستعملة.",
         sectionBlog: "آخر المقالات",
-        post1Title: "كيف تبدأ في عالم تطوير الويب؟",
-        post1Date: "تم النشر في: 12 يوليو 2026",
-        post1Desc: "مقال يستعرض خريطة الطريق الأساسية والمنصات التعليمية المناسبة لدخول هندسة البرمجيات والمواقع...",
+        post1Title: "فهم توجيه الحزم (Packet Forwarding): CCNA Day 11",
+        post1Date: "تم النشر في: 23 يوليو 2026",
+        post1Desc: "شرح عميق لجدول التوجيه، المسارات المتصلة والمحلية، وقاعدة المطابقة الأطول (Longest Prefix Match).",
         footerText: "© 2026 أنس. كل الحقوق محفوظة."
       },
       fr: {
@@ -401,16 +399,16 @@
         navProjects: "Projets",
         navBlog: "Blog",
         heroTitle: "Salut, je suis Anas — je décortique les réseaux pour comprendre leur fonctionnement.",
-        heroDesc: "Ingénieur Logiciel axé sur les réseaux et la cybersécurité. Passionné par Linux, les homelabs et curieux de voir ce qui se cache sous le capot des logiciels. En plein apprentissage de Docker.",
+        heroDesc: "Spécialisé en Réseaux et Cybersécurité. Passionné par Linux, les homelabs et curieux de voir ce qui se cache sous le capot.",
         sectionProjects: "Projets Récents",
         proj1Title: "Premier Projet",
-        proj1Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        proj1Desc: "Une brève description expliquant l'architecture du projet.",
         proj2Title: "Deuxième Projet",
-        proj2Desc: "Une brève description expliquant l'architecture de votre projet et les piles techniques utilisées comme HTML, CSS, JavaScript.",
+        proj2Desc: "Une brève description expliquant l'architecture du projet.",
         sectionBlog: "Derniers Articles",
-        post1Title: "Comment Débuter dans le Développement Web ?",
-        post1Date: "Publié le: 12 Juillet 2026",
-        post1Desc: "Un article instructif couvrant les frameworks essentiels et les feuilles de route adaptées aux nouveaux arrivants...",
+        post1Title: "Comprendre le transfert de paquets : CCNA Day 11",
+        post1Date: "Publié le: 23 Juillet 2026",
+        post1Desc: "Une analyse approfondie des tables de routage et de la règle du plus long préfixe.",
         footerText: "© 2026 ANAS. Tous droits réservés."
       }
     };
@@ -434,9 +432,12 @@
       document.getElementById('proj2-title').textContent = data.proj2Title;
       document.getElementById('proj2-desc').textContent = data.proj2Desc;
       document.getElementById('section-blog-title').textContent = data.sectionBlog;
-      document.getElementById('post1-title').textContent = data.post1Title;
-      document.getElementById('post1-date').textContent = data.post1Date;
-      document.getElementById('post1-desc').textContent = data.post1Desc;
+      
+      // عناصر المقال الأول
+      if(document.getElementById('post1-title')) document.getElementById('post1-title').textContent = data.post1Title;
+      if(document.getElementById('post1-date')) document.getElementById('post1-date').textContent = data.post1Date;
+      if(document.getElementById('post1-desc')) document.getElementById('post1-desc').textContent = data.post1Desc;
+      
       document.getElementById('footer-text').textContent = data.footerText;
 
       langSwitcher.value = lang;
