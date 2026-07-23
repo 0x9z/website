@@ -313,7 +313,7 @@
     <section id="blog">
       <h2 class="section-title" id="section-blog-title">Latest Articles</h2>
       
-      <!-- هنا كارت مقالك الأول المربوط بملف الـ Markdown -->
+      <!-- Markdown -->
       <div class="card">
         <h3><a href="article.html?file=day11-routing-fundamentals.md" id="post1-title">Understanding Packet Forwarding: CCNA Day 11</a></h3>
         <p><small style="display:block; margin-bottom: 5px;" id="post1-date">Published on: July 23, 2026</small></p>
@@ -433,7 +433,6 @@
       document.getElementById('proj2-desc').textContent = data.proj2Desc;
       document.getElementById('section-blog-title').textContent = data.sectionBlog;
       
-      // عناصر المقال الأول
       if(document.getElementById('post1-title')) document.getElementById('post1-title').textContent = data.post1Title;
       if(document.getElementById('post1-date')) document.getElementById('post1-date').textContent = data.post1Date;
       if(document.getElementById('post1-desc')) document.getElementById('post1-desc').textContent = data.post1Desc;
