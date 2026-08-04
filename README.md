@@ -3,7 +3,7 @@
 Personal portfolio of **Anas (0x9z)** — Linux, Networking & Cybersecurity specialist from Marrakech, Morocco.
 
 ### 🚀 Live Site
-[https://cybernetwork.technology](https://cybernetwork.technology)
+[Cybernetwork.technology](https://cybernetwork.technology)
 
 ### 🛠️ Built With
 - HTML, CSS, JavaScript
