@@ -1,6 +1,6 @@
 # cybernetwork.technology
 
-Personal portfolio of **Anas Ait baani (0x9z)** — Linux, Networking & Cybersecurity specialist from Marrakech, Morocco.
+Personal portfolio of **Anas (0x9z)** — Linux, Networking & Cybersecurity specialist from Marrakech, Morocco.
 
 ### 🚀 Live Site
 [https://cybernetwork.technology](https://cybernetwork.technology)
