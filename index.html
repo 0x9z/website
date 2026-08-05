@@ -34,7 +34,6 @@
       -webkit-user-select: none;
     }
 
-    /* Background animated grid */
     .bg-grid {
       position: fixed;
       inset: 0;
@@ -52,7 +51,6 @@
       100% { background-position: 50px 50px; }
     }
 
-    /* Particles */
     .particles {
       position: fixed;
       inset: 0;
@@ -78,7 +76,6 @@
       100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
     }
 
-    /* Main OS window */
     .os-container {
       position: relative;
       z-index: 10;
@@ -88,7 +85,6 @@
       flex-direction: column;
     }
 
-    /* Top bar */
     .topbar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -116,7 +112,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 1200;
+      font-weight: 900;
       font-size: 2rem;
       color: #000;
       box-shadow: var(--glow);
@@ -186,7 +182,6 @@
       50% { opacity: 0.3; }
     }
 
-    /* Main workspace */
     .workspace {
       flex: 1;
       display: flex;
@@ -194,7 +189,6 @@
       position: relative;
     }
 
-    /* Sidebar */
     .sidebar {
       width: 260px;
       background: var(--surface);
@@ -251,7 +245,6 @@
       text-align: center;
     }
 
-    /* Main content area */
     .main-content {
       flex: 1;
       display: flex;
@@ -277,7 +270,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Terminal panel */
     .terminal-panel {
       flex: 1;
       display: none;
@@ -305,7 +297,7 @@
     .terminal-input-line {
       display: flex;
       align-items: center;
-      padding: 5rem 1.5rem;
+      padding: 1rem 1.5rem;
       border-top: 1px solid var(--border);
       background: #02050a;
     }
@@ -336,7 +328,6 @@
     .cmd-white { color: #e8f0f8; }
     .cmd-yellow { color: #ffcc00; }
 
-    /* Cards in panels */
     .glass-card {
       background: rgba(6,13,20,0.8);
       border: 1px solid var(--border);
@@ -361,32 +352,9 @@
       gap: 0.6rem;
     }
 
-	.grid-1 { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+    .grid-1 { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
-
-    .stat-inline {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-
-    .stat-inline .stat-val {
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(to bottom, #fff, var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat-inline .stat-lbl {
-      font-size: 0.7rem;
-      color: #6a8aaa;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
     .badge-sm {
       display: inline-block;
@@ -422,7 +390,6 @@
 
     .contact-link:hover { color: var(--accent); border-bottom-color: var(--accent); text-shadow: 0 0 6px var(--accent); }
 
-    /* Mobile */
     @media (max-width: 768px) {
       .sidebar { width: 60px; }
       .sidebar-item span:not(.sidebar-icon) { display: none; }
@@ -443,14 +410,11 @@
 </head>
 <body>
 
-  <!-- Background -->
   <div class="bg-grid"></div>
   <div class="particles" id="particles"></div>
 
-  <!-- OS Container -->
   <div class="os-container">
 
-    <!-- Top Bar -->
     <div class="topbar">
       <div class="topbar-left">
         <div class="logo-small">0x</div>
@@ -471,10 +435,8 @@
       </div>
     </div>
 
-    <!-- Workspace -->
     <div class="workspace">
 
-      <!-- Sidebar -->
       <div class="sidebar">
         <div class="sidebar-section">
           <div class="sidebar-label">Navigation</div>
@@ -492,157 +454,69 @@
         </div>
       </div>
 
-      <!-- Main Content Area -->
       <div class="main-content">
 
         <!-- About Panel -->
-<div class="content-panel active" id="panel-about">
+        <div class="content-panel active" id="panel-about">
+          <div class="glass-card" style="padding:3rem 2rem;margin-bottom:1.5rem;">
+            <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+              <div style="width:100px;height:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:1.2rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:900;color:#000;flex-shrink:0;box-shadow:0 0 30px rgba(0,229,255,0.3);">0x</div>
+              <div style="flex:1;min-width:250px;">
+                <h1 style="font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:0.2rem;letter-spacing:-1px;">Anas Ait baani</h1>
+                <p style="font-size:1.2rem;color:var(--accent);font-weight:500;margin-bottom:0.5rem;">Linux & IT Infrastructure | Networking | Shell Scripting</p>
+                <p style="color:#8ba9c7;font-size:0.95rem;max-width:600px;">Self-taught Linux enthusiast based in Marrakech. I build infrastructure, automate with bash, and break down networks to understand how they work.</p>
+                <div style="display:flex;gap:1.2rem;margin-top:1rem;flex-wrap:wrap;">
+                  <a href="https://github.com/0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">🐙 github/0x9z</a>
+                  <a href="https://linkedin.com/in/0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">💼 linkedin/in/0x9z</a>
+                  <a href="https://medium.com/@0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">📖 medium/@0x9z</a>
+                  <span style="color:#5a7a90;font-size:0.9rem;">📍 Marrakech, Morocco</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Hero Section -->
-  <div class="glass-card" style="padding:3rem 2rem;margin-bottom:1.5rem;">
-    <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
-      
-      <!-- Avatar -->
-      <div style="width:100px;height:100px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:1.2rem;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:900;color:#000;flex-shrink:0;box-shadow:0 0 30px rgba(0,229,255,0.3);">0x</div>
-      
-      <!-- Name & Title -->
-      <div style="flex:1;min-width:250px;">
-        <h1 style="font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:0.2rem;letter-spacing:-1px;">Anas Ait baani</h1>
-        <p style="font-size:1.2rem;color:var(--accent);font-weight:500;margin-bottom:0.5rem;">Linux & IT Infrastructure | Networking | Shell Scripting</p>
-        <p style="color:#8ba9c7;font-size:0.95rem;max-width:600px;">Self-taught Linux enthusiast based in Marrakech. I build infrastructure, automate with bash, and break down networks to understand how they work.</p>
-        
-        <!-- Quick Links -->
-        <div style="display:flex;gap:1.2rem;margin-top:1rem;flex-wrap:wrap;">
-          <a href="https://github.com/0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">🐙 github/0x9z</a>
-          <a href="https://linkedin.com/in/0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">💼 linkedin/in/0x9z</a>
-          <a href="https://medium.com/@0x9z" target="_blank" style="color:#8ab8d8;text-decoration:none;font-size:0.9rem;display:flex;align-items:center;gap:0.4rem;transition:0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#8ab8d8'">📖 medium/@0x9z</a>
-          <span style="color:#5a7a90;font-size:0.9rem;">📍 Marrakech, Morocco</span>
+          <div class="grid-2" style="margin-bottom:1.5rem;">
+            <div class="glass-card" style="padding:1.8rem;">
+              <div class="section-title" style="font-size:1.2rem;margin-bottom:1.5rem;">🛠️ Technical Skills</div>
+              <div style="margin-bottom:1.2rem;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Linux Administration</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">45%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:75%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;box-shadow:0 0 10px rgba(0,229,255,0.3);"></div></div>
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Shell Scripting (Bash)</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">30%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:70%;background:linear-gradient(90deg,#00ff88,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(0,255,136,0.3);"></div></div>
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Networking (CCNA Level)</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">65%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:65%;background:linear-gradient(90deg,#7c3aed,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(124,58,237,0.3);"></div></div>
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Docker & Containers</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">10%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:50%;background:linear-gradient(90deg,#2496ED,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(36,150,237,0.3);"></div></div>
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Python</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">10%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:40%;background:linear-gradient(90deg,#ffcc00,#ffaa00);border-radius:3px;box-shadow:0 0 10px rgba(255,204,0,0.3);"></div></div>
+              </div>
+              <div style="margin-bottom:0;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;"><span style="color:#e0f0ff;font-size:0.9rem;">Cybersecurity Fundamentals</span><span style="color:var(--accent);font-size:0.85rem;font-weight:600;">15%</span></div>
+                <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;"><div style="height:100%;width:45%;background:linear-gradient(90deg,#F04E23,#ffcc00);border-radius:3px;box-shadow:0 0 10px rgba(240,78,35,0.3);"></div></div>
+              </div>
+            </div>
+            <div class="glass-card" style="padding:1.5rem;text-align:center;display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:center;">
+              <div class="section-title" style="font-size:1.2rem;margin-bottom:0;">📊 GitHub Analytics</div>
+              <img src="https://github-readme-stats.vercel.app/api?username=0x9z&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&title_color=00e5ff&icon_color=7c3aed&text_color=b8c7d9&bg_color=060d14&ring_color=00e5ff&border_radius=10" alt="GitHub Stats" style="width:100%;max-width:420px;border-radius:0.8rem;" />
+              <img src="https://streak-stats.demolab.com/?user=0x9z&theme=tokyonight&hide_border=true&background=060d14&stroke=00e5ff&ring=7c3aed&fire=ffcc00&currStreakNum=ffffff&sideNums=00e5ff&currStreakLabel=00e5ff&sideLabels=b8c7d9&dates=5f7b99&border_radius=10" alt="GitHub Streak" style="width:100%;max-width:420px;border-radius:0.8rem;" />
+              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=0x9z&theme=tokyonight&hide_border=true&layout=compact&title_color=00e5ff&text_color=b8c7d9&bg_color=060d14&border_radius=10" alt="Top Languages" style="width:100%;max-width:420px;border-radius:0.8rem;" />
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding:1.8rem;">
+            <div class="section-title" style="font-size:1.2rem;">💡 About Me</div>
+            <p style="color:#b8c7d9;line-height:1.8;font-size:0.95rem;">Specialized in networks and cyber security. Fueled by Linux, hands-on homelabs, and a deep curiosity to look under the hood of tools and software. I document everything I learn — because the best way to understand something is to break it down and rebuild it.</p>
+            <p style="font-style:italic;color:var(--accent);margin-top:2rem;border-left:3px solid var(--accent);padding-left:1rem;font-size:2rem;opacity:0.9;">"I learn by doing — one command at a time."</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skills + Stats Row -->
-  <div class="grid-2" style="margin-bottom:1.5rem;">
-    
-    <!-- Technical Skills -->
-    <div class="glass-card" style="padding:1.8rem;">
-      <div class="section-title" style="font-size:1.2rem;margin-bottom:1.5rem;">🛠️ Technical Skills</div>
-      
-      <!-- Linux -->
-      <div style="margin-bottom:1.2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Linux Administration</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">45%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;box-shadow:0 0 10px rgba(0,229,255,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="75"></div>
-        </div>
-      </div>
-
-      <!-- Shell Scripting -->
-      <div style="margin-bottom:1.2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Shell Scripting (Bash)</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">30%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,#00ff88,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(0,255,136,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="70"></div>
-        </div>
-      </div>
-
-      <!-- Networking -->
-      <div style="margin-bottom:1.2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Networking (CCNA Level)</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">65%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,#7c3aed,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(124,58,237,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="65"></div>
-        </div>
-      </div>
-
-      <!-- Docker -->
-      <div style="margin-bottom:1.2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Docker & Containers</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">10%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,#2496ED,#00e5ff);border-radius:3px;box-shadow:0 0 10px rgba(36,150,237,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="50"></div>
-        </div>
-      </div>
-
-      <!-- Python -->
-      <div style="margin-bottom:1.2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Python</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">10%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,#ffcc00,#ffaa00);border-radius:3px;box-shadow:0 0 10px rgba(255,204,0,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="40"></div>
-        </div>
-      </div>
-
-      <!-- Cybersecurity -->
-      <div style="margin-bottom:0;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:0.3rem;">
-          <span style="color:#e0f0ff;font-size:0.9rem;">Cybersecurity Fundamentals</span>
-          <span style="color:var(--accent);font-size:0.85rem;font-weight:600;">15%</span>
-        </div>
-        <div style="height:6px;background:#0f1a26;border-radius:3px;overflow:hidden;">
-          <div style="height:100%;width:0%;background:linear-gradient(90deg,#F04E23,#ffcc00);border-radius:3px;box-shadow:0 0 10px rgba(240,78,35,0.3);transition:width 1.5s ease;" class="skill-bar" data-width="45"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GitHub Analytics -->
-    <div class="glass-card" style="padding:1.5rem;text-align:center;display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:center;">
-      <div class="section-title" style="font-size:1.2rem;margin-bottom:0;">📊 GitHub Analytics</div>
-      <img src="https://github-readme-stats.vercel.app/api?username=0x9z&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&title_color=00e5ff&icon_color=7c3aed&text_color=b8c7d9&bg_color=060d14&ring_color=00e5ff&border_radius=10" 
-           alt="GitHub Stats" style="width:100%;max-width:420px;border-radius:0.8rem;" />
-      <img src="https://streak-stats.demolab.com/?user=0x9z&theme=tokyonight&hide_border=true&background=060d14&stroke=00e5ff&ring=7c3aed&fire=ffcc00&currStreakNum=ffffff&sideNums=00e5ff&currStreakLabel=00e5ff&sideLabels=b8c7d9&dates=5f7b99&border_radius=10" 
-           alt="GitHub Streak" style="width:100%;max-width:420px;border-radius:0.8rem;" />
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=0x9z&theme=tokyonight&hide_border=true&layout=compact&title_color=00e5ff&text_color=b8c7d9&bg_color=060d14&border_radius=10" 
-           alt="Top Languages" style="width:100%;max-width:420px;border-radius:0.8rem;" />
-    </div>
-
-  </div>
-
-  <!-- Bottom: About + Quote -->
-  <div class="glass-card" style="padding:1.8rem;">
-    <div class="section-title" style="font-size:1.2rem;">💡 About Me</div>
-    <p style="color:#b8c7d9;line-height:1.8;font-size:0.95rem;">
-      Specialized in networks and cyber security. Fueled by Linux, hands-on homelabs, and a deep curiosity to look under the hood of tools and software. I document everything I learn — because the best way to understand something is to break it down and rebuild it.
-    </p>
-    <p style="font-style:italic;color:var(--accent);margin-top:2rem;border-left:3px solid var(--accent);padding-left:1rem;font-size:2rem;opacity:0.9;">
-      "I learn by doing — one command at a time."
-    </p>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- Projects Panel -->
         <div class="content-panel" id="panel-projects">
@@ -674,126 +548,52 @@
           </div>
         </div>
 
-
-
-
-
-
-
-<!-- Certifications Panel -->
-<div class="content-panel" id="panel-certs">
-  <div class="section-title">📜 Certifications & Learning</div>
-  
-  <div class="grid-1">
-    
-    <!-- Earned Certifications -->
-    <div class="glass-card">
-      <div class="section-title" style="font-size:2rem;">✅ Earned</div>
-      
-      <div class="cert-item">
-        <strong>ISO/IEC 27001 Information Security Associate™</strong>
-        <span class="badge-sm" style="margin-left:auto;">SkillFront</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Aug 2026 · Credential ID: 83112087441732</div>
-      
-      <div class="cert-item">
-        <strong>Linux 100: Fundamentals</strong>
-        <span class="badge-sm" style="margin-left:auto;">TCM Security</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026 · Credential ID: cert_hf0tnjt9</div>
-      
-      <div class="cert-item">
-        <strong>Practical Ethical Hacking</strong>
-        <span class="badge-sm" style="margin-left:auto;">TCM Security</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Course Completed · PDF Certification</div>
-      
-      <div class="cert-item">
-        <strong>Introduction to Cybersecurity</strong>
-        <span class="badge-sm" style="margin-left:auto;">Cisco</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026</div>
-      
-      <div class="cert-item">
-        <strong>ISC2 Candidate</strong>
-        <span class="badge-sm" style="margin-left:auto;">ISC2</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026 · Expires Mar 2027</div>
-    </div>
-
-    <!-- In Progress -->
-    <div class="glass-card">
-      <div class="section-title" style="font-size:2rem;">🟢 In Progress</div>
-      <div class="cert-item">
-        <strong>CCNA (Cisco Certified Network Associate)</strong>
-        <span class="badge-sm" style="margin-left:auto;">Cisco</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Studying: Jeremy's IT Lab + Packet Tracer Labs</div>
-      
-      <div class="cert-item">
-        <strong>LPIC-1 / Linux Administrator</strong>
-        <span class="badge-sm" style="margin-left:auto;">Linux Foundation</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Hands-on homelab practice</div>
-      
-      <div class="cert-item">
-        <strong>CompTIA Security+</strong>
-        <span class="badge-sm" style="margin-left:auto;">CompTIA</span>
-      </div>
-      <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Planned — builds on ISC2 & ISO 27001 knowledge</div>
-    </div>
-
-    <!-- Hands-On Labs -->
-    <div class="glass-card">
-      <div class="section-title" style="font-size:2rem;">🔬 Hands-On Labs</div>
-      <div class="cert-item">Multi-Switch VLAN Network (Packet Tracer)</div>
-      <div class="cert-item">802.1Q Trunking & Native VLAN Security</div>
-      <div class="cert-item">Linux Server Monitoring (Bash + Cron)</div>
-      <div class="cert-item">Automated Backup Scripting (Shell)</div>
-      <div class="cert-item">Docker Container Deployment</div>
-      <div class="cert-item">CDP & LLDP Neighbor Discovery</div>
-    </div>
-
-    <!-- Badges Section -->
-    <div class="glass-card">
-      <div class="section-title" style="font-size:2rem;">🏷️ Platform Badges & Skills</div>
-      <div style="margin-bottom:1rem;">
-        <span class="badge-sm">Cisco</span>
-        <span class="badge-sm">Juniper</span>
-        <span class="badge-sm">Palo Alto</span>
-        <span class="badge-sm">Linux Foundation</span>
-        <span class="badge-sm">Docker</span>
-        <span class="badge-sm">GitHub</span>
-        <span class="badge-sm">Fedora</span>
-        <span class="badge-sm">YAML</span>
-        <span class="badge-sm">JavaScript</span>
-        <span class="badge-sm">Perl</span>
-        <span class="badge-sm">Python</span>
-        <span class="badge-sm">Bash</span>
-      </div>
-      <div style="margin-bottom:1rem;">
-        <span class="badge-sm">Shell Scripting</span>
-        <span class="badge-sm">Linux Admin</span>
-        <span class="badge-sm">Git</span>
-        <span class="badge-sm">CI/CD</span>
-        <span class="badge-sm">Networking</span>
-        <span class="badge-sm">Cybersecurity</span>
-        <span class="badge-sm">Docker</span>
-        <span class="badge-sm">Packet Tracer</span>
-        <span class="badge-sm">Wireshark</span>
-        <span class="badge-sm">VS Code</span>
-      </div>
-    </div>
-
-  </div><!-- closes grid-1 -->
-</div><!-- closes panel-certs -->
-
-	
-
-
-
-
-
+        <!-- Certifications Panel -->
+        <div class="content-panel" id="panel-certs">
+          <div class="section-title">📜 Certifications & Learning</div>
+          <div class="grid-1">
+            <div class="glass-card">
+              <div class="section-title" style="font-size:2rem;">✅ Earned</div>
+              <div class="cert-item"><strong>ISO/IEC 27001 Information Security Associate™</strong><span class="badge-sm" style="margin-left:auto;">SkillFront</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Aug 2026 · Credential ID: 83112087441732</div>
+              <div class="cert-item"><strong>Linux 100: Fundamentals</strong><span class="badge-sm" style="margin-left:auto;">TCM Security</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026 · Credential ID: cert_hf0tnjt9</div>
+              <div class="cert-item"><strong>Practical Ethical Hacking</strong><span class="badge-sm" style="margin-left:auto;">TCM Security</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Course Completed · PDF Certification</div>
+              <div class="cert-item"><strong>Introduction to Cybersecurity</strong><span class="badge-sm" style="margin-left:auto;">Cisco</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026</div>
+              <div class="cert-item"><strong>ISC2 Candidate</strong><span class="badge-sm" style="margin-left:auto;">ISC2</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Issued Mar 2026 · Expires Mar 2027</div>
+            </div>
+            <div class="glass-card">
+              <div class="section-title" style="font-size:2rem;">🟢 In Progress</div>
+              <div class="cert-item"><strong>CCNA (Cisco Certified Network Associate)</strong><span class="badge-sm" style="margin-left:auto;">Cisco</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Studying: Jeremy's IT Lab + Packet Tracer Labs</div>
+              <div class="cert-item"><strong>LPIC-1 / Linux Administrator</strong><span class="badge-sm" style="margin-left:auto;">Linux Foundation</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Hands-on homelab practice</div>
+              <div class="cert-item"><strong>CompTIA Security+</strong><span class="badge-sm" style="margin-left:auto;">CompTIA</span></div>
+              <div style="font-size:0.75rem;color:#5f7b99;margin-bottom:0.8rem;">Planned — builds on ISC2 & ISO 27001 knowledge</div>
+            </div>
+            <div class="glass-card">
+              <div class="section-title" style="font-size:2rem;">🔬 Hands-On Labs</div>
+              <div class="cert-item">Multi-Switch VLAN Network (Packet Tracer)</div>
+              <div class="cert-item">802.1Q Trunking & Native VLAN Security</div>
+              <div class="cert-item">Linux Server Monitoring (Bash + Cron)</div>
+              <div class="cert-item">Automated Backup Scripting (Shell)</div>
+              <div class="cert-item">Docker Container Deployment</div>
+              <div class="cert-item">CDP & LLDP Neighbor Discovery</div>
+            </div>
+            <div class="glass-card">
+              <div class="section-title" style="font-size:2rem;">🏷️ Platform Badges & Skills</div>
+              <div style="margin-bottom:1rem;">
+                <span class="badge-sm">Cisco</span><span class="badge-sm">Juniper</span><span class="badge-sm">Palo Alto</span><span class="badge-sm">Linux Foundation</span><span class="badge-sm">Docker</span><span class="badge-sm">GitHub</span><span class="badge-sm">Fedora</span><span class="badge-sm">YAML</span><span class="badge-sm">JavaScript</span><span class="badge-sm">Perl</span><span class="badge-sm">Python</span><span class="badge-sm">Bash</span>
+              </div>
+              <div>
+                <span class="badge-sm">Shell Scripting</span><span class="badge-sm">Linux Admin</span><span class="badge-sm">Git</span><span class="badge-sm">CI/CD</span><span class="badge-sm">Networking</span><span class="badge-sm">Cybersecurity</span><span class="badge-sm">Docker</span><span class="badge-sm">Packet Tracer</span><span class="badge-sm">Wireshark</span><span class="badge-sm">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Blog Panel -->
         <div class="content-panel" id="panel-blog">
@@ -827,7 +627,7 @@
   </div>
 
   <script>
-    // --- Particles ---
+    // Particles
     const particlesContainer = document.getElementById('particles');
     for (let i = 0; i < 50; i++) {
       const p = document.createElement('div');
@@ -840,35 +640,31 @@
       particlesContainer.appendChild(p);
     }
 
-    // --- Clock ---
+    // Clock
     function updateClock() {
-      const now = new Date();
-      document.getElementById('clock').textContent = now.toLocaleTimeString('en-US', { hour12: false });
+      document.getElementById('clock').textContent = new Date().toLocaleTimeString('en-US', { hour12: false });
     }
     updateClock();
     setInterval(updateClock, 1000);
 
-    // --- Panel Switching ---
+    // Panel Switching
     const panels = {
       about: document.getElementById('panel-about'),
       projects: document.getElementById('panel-projects'),
-	  certs: document.getElementById('panel-certs'),
-	  blog: document.getElementById('panel-blog'),
+      certs: document.getElementById('panel-certs'),
+      blog: document.getElementById('panel-blog'),
       terminal: document.getElementById('panel-terminal'),
     };
 
     function switchPanel(panelName) {
       Object.values(panels).forEach(p => p.classList.remove('active'));
       if (panels[panelName]) panels[panelName].classList.add('active');
-
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
-
       const tab = document.querySelector(`.tab[data-panel="${panelName}"]`);
       if (tab) tab.classList.add('active');
       const sidebarItem = document.querySelector(`.sidebar-item[data-panel="${panelName}"]`);
       if (sidebarItem) sidebarItem.classList.add('active');
-
       if (panelName === 'terminal') {
         setTimeout(() => document.getElementById('terminal-input').focus(), 100);
       }
@@ -884,14 +680,14 @@
       });
     });
 
-    // --- Terminal Commands ---
+    // Terminal
     const termOutput = document.getElementById('terminal-output');
     const termInput = document.getElementById('terminal-input');
 
     const commands = {
       help: () => `
 <span class="cmd-yellow">Available commands:</span>
-  <span class="cmd-green">about</span>      - whoami
+  <span class="cmd-green">about</span>      - who am i
   <span class="cmd-green">whoami</span>     - display identity
   <span class="cmd-green">projects</span>   - list pinned repos
   <span class="cmd-green">certs</span>      - show certifications
@@ -991,29 +787,23 @@
       if (e.key === 'Enter') {
         const input = termInput.value.trim();
         if (!input) return;
-
         appendOutput(`\n<span class="prompt-symbol">0x9z@cybernetwork:~$</span> <span class="cmd-white">${input}</span>`);
-
         const parts = input.split(/\s+/);
         const cmd = parts[0].toLowerCase();
         const args = parts.slice(1);
-
         if (commands[cmd]) {
-          const result = commands[cmd](args);
-          appendOutput(result);
+          appendOutput(commands[cmd](args));
         } else if (cmd === 'sudo') {
-          const result = commands['sudo'](args);
-          appendOutput(result);
+          appendOutput(commands['sudo'](args));
         } else {
           appendOutput(`<span class="cmd-dim">bash: ${cmd}: command not found. Type 'help' for available commands.</span>`);
         }
-
         termInput.value = '';
         termOutput.scrollTop = termOutput.scrollHeight;
       }
     });
 
-    // --- Blog Fetch ---
+    // Blog Fetch
     (async function loadBlog() {
       const container = document.getElementById('blog-container');
       if (!container) return;
@@ -1021,15 +811,15 @@
         const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@0x9z');
         const data = await res.json();
         if (data.status === 'ok' && data.items?.length) {
-          container.innerHTML = data.items.slice(0, 100).map(post => {
+          container.innerHTML = data.items.slice(0, 10).map(post => {
             const date = new Date(post.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
             const div = document.createElement('div');
             div.innerHTML = post.description || '';
             const desc = (div.textContent || '').substring(0, 120) + '...';
             return `<div class="glass-card">
               <strong><a href="${post.link}" target="_blank" style="color:#e0f0ff;text-decoration:none;">${post.title}</a></strong>
-              <div style="font-size:1rem;color:#5f7b99;">${date}</div>
-              <p style="font-size:1rem;color:#8ba9c7;margin-top:0.7rem;">${desc}</p>
+              <div style="font-size:0.8rem;color:#5f7b99;">${date}</div>
+              <p style="font-size:0.85rem;color:#8ba9c7;margin-top:0.5rem;">${desc}</p>
               <a href="${post.link}" target="_blank" style="color:var(--accent);font-size:0.75rem;">Read →</a>
             </div>`;
           }).join('');
